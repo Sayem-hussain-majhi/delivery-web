@@ -1,0 +1,16 @@
+.cardBtn{
+    padding: 4px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+    color: aliceblue;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: large;
+    background: rgba(20, 184, 165, 0.842);
+    transition: 0.5s;
+}
+
+.cardBtn:hover{
+    background: rgb(0, 138, 148);
+}

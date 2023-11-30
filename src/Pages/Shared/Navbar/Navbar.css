@@ -1,0 +1,37 @@
+.sidebar{
+    position: absolute;
+    width: 100px;
+    height:  150px;
+    margin-left: -60px;
+    margin-top: 50px;
+    /* padding: 10px; */
+    background-color: aqua;
+    list-style: none;
+    transition: all 0.5s;
+}
+
+.sidebar li{
+    padding: 10px;
+    padding-right: 10px;
+    /* font-size: 20px; */
+    font-weight: 600;
+    
+}
+
+.sidebar-off{
+    position: absolute;
+    width: 100px;
+    height:  150px;
+    margin-left: -60px;
+    margin-top: -250px;
+    /* padding: 10px; */
+    background-color: rgb(247, 0, 255);
+    list-style: none;
+    transition: all 0.5s;
+}
+
+.sidebar-off li{
+    padding: 10px;
+    padding-right: 10px;
+    
+}
