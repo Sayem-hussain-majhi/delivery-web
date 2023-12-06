@@ -11,15 +11,29 @@ const Signup = () => {
         formState: { errors } } = useForm()
     const navigate = useNavigate()
     const axiosURL = useAxios()
+    // const [currentDate, setCurrentDate] = useState(new Date());
+   
+
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //       setCurrentDate(new Date());
+    //     }, 1000);
+    
+    //     return () => clearInterval(interval);
+    //   }, []);
+
+     
 
     const handleGoogleSingin = () => {
         googleSignin()
             .then(res => {
-                navigate('/')
                 console.log(res)
+                navigate('/')
             })
             .catch(error => console.log(error))
     }
+
+    
 
     const onSubmit = data => {
 
@@ -29,7 +43,8 @@ const Signup = () => {
                 console.log(res.data)
                 const userInfo = {
                     name : data.name,
-                    email : data.email
+                    email : data.email,
+                    role : 'user'
                 }
                 axiosURL.post('/users', userInfo)
                     .then(res => {
@@ -107,3 +122,5 @@ const Signup = () => {
 };
 
 export default Signup;
+
+

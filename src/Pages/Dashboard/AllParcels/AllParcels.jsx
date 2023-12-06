@@ -1,28 +1,34 @@
 import React from 'react';
 import Heading from '../../../Components/Heading/Heading';
 import useAxios from '../../../Hooks/useAxios';
-import { useQuery } from '@tanstack/react-query';
+import useBookings from '../../../Hooks/useBookings';
 
 const AllParcels = () => {
     const axiosURL = useAxios()
-    const { data: bookings = [] } = useQuery({
-        queryKey: ['bookings'],
-        queryFn: async () => {
-            const res = await axiosURL.get('/bookings')
-            return res.data
-        }
-    })
-
+    const [bookings, isPending, refetch] = useBookings()
+    console.log(bookings)
+    
 
     const handleDelete = (booking) => {
         const id = booking._id
         console.log(id)
+        axiosURL.delete(`/bookings/${id}`)
+        .then(res => {
+            console.log(res.data)
+            if(res.data.deletedCount > 0){
+                refetch()
+
+            }
+        })
+        
+        
+
 
     }
 
     const handleChange = (evnet)=>{
         console.log(evnet.target.value)
-        
+
     }
 
 

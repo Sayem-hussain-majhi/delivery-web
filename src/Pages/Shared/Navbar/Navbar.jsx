@@ -1,18 +1,22 @@
 import { Link } from "react-router-dom";
 import { IoMdNotifications } from "react-icons/io";
 import useAuth from "../../../Hooks/useAuth";
+import { FaUserCircle } from "react-icons/fa";
 import './Navbar.css'
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
     const { user, logout } = useAuth()
     const [isNavOpen, setIsNavOpen] = useState(false)
-    console.log(user)
+    
+
     const handleLogout = () => {
         logout()
             .then(res => {
+                console.log(res)
                 Swal.fire({
-                    position: "secter",
+                    position: "center",
                     icon: "success",
                     title: "Logout successfully",
                     showConfirmButton: false,
@@ -61,7 +65,15 @@ const Navbar = () => {
                             <a className="">
                                 <div className="avatar flex flex-col">
                                     <div className="w-9 rounded-full">
-                                        <img onClick={()=> setIsNavOpen(!isNavOpen)} src={user?.photoURL} />
+                                       {user?.photoURL ? <img
+                                        onClick={()=> setIsNavOpen(!isNavOpen) } 
+                                        src={user?.photoURL} 
+                                        alt=""/>
+                                         : 
+                                        <img
+                                        onClick={()=> setIsNavOpen(!isNavOpen) } 
+                                        alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                        }
                                     </div>
                                     <div className={`${isNavOpen ? 'sidebar' : 'sidebar-off'}`}>
                                         <li><button>{user.displayName}</button></li>

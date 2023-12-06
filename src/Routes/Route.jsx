@@ -40,10 +40,6 @@ export const router = createBrowserRouter([
         path: '/dashboard',
         element:<Dashboard></Dashboard> ,
         children:[
-            {
-                path: '/dashboard'
-            },
-
             // user
             {
                 path: '/dashboard/bookParcel',

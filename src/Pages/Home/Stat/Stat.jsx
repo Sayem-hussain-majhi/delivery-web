@@ -8,12 +8,12 @@ const Stat = () => {
     axiosURL.get('/bookings')
     .then (res =>{
         setBookings(res.data.length)
-        console.log(res.data.length)
+     
     })
     axiosURL.get('/users')
     .then (res =>{
         setUsers(res.data.length)
-        console.log(res.data.length)
+       
     })
 
 

@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 const Login = () => {
     const { googleSignin, login, user} = useAuth()
     const navigate = useNavigate()
-    console.log(user)
+   
     const { register, handleSubmit, 
         formState: { errors } } = useForm()
 
@@ -18,7 +18,7 @@ const Login = () => {
             console.log(res.user)
             navigate('/')
             Swal.fire({
-                position: "secter",
+                position: "center",
                 icon: "success",
                 title: "Logged in successfully",
                 showConfirmButton: false,

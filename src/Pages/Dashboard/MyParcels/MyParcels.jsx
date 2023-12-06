@@ -33,7 +33,7 @@ const MyParcels = () => {
 
     const handleDelete = async (id) => {
         useEffect(() => {
-            fetch(`http://localhost:5000/bookings/${id}`, {
+            fetch(`https://assignment-12-server-flax-ten.vercel.app/bookings/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => console.log(res))

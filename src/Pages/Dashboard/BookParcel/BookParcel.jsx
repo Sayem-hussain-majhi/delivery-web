@@ -16,10 +16,10 @@ const BookParcel = () => {
         = useForm()
     const [latitude, setLatitude] = useState(null)
     const [longitude, setLognitude] = useState(null)
-
     const [price, setPrice] = useState('')
 
-    console.log(price)
+    
+
 
     const onSubmit = (data) => {
           const { name, email, phone, parcelType, parcelWigth, receiversName, receiversNumber, parcelDeliveryAddress, requestedDeliveryDate, latitude, longitude, bookingDate } = data;
@@ -29,7 +29,7 @@ const BookParcel = () => {
              name, email, phone, status: 'panding',
              parcelType,
              parcelWigth : parseInt(parcelWigth) * 50, receiversName,
-             receiversNumber, parcelDeliveryAddress, requestedDeliveryDate, latitude, longitude, bookingDate };
+             receiversNumber, parcelDeliveryAddress, requestedDeliveryDate, latitude, longitude, bookingDate  };
 
              
         
@@ -104,7 +104,7 @@ const BookParcel = () => {
                     type='number' className='p-2 mr-2 w-full border-4 rounded-md' placeholder='Parcel Wigth' 
                     {...register("parcelWigth", { required: true })} />
                     
-                    <input className='p-2 w-full border-4 rounded-md' placeholder='Booking Date' {...register("bookingDate", { required: true })} />
+                    <input  className='p-2 w-full border-4 rounded-md' placeholder='Booking Date' {...register("bookingDate", { required: true })} />
 
                 </div>
 
@@ -141,7 +141,7 @@ const BookParcel = () => {
                     <p>Price: {price}</p>
                 </div>
 
-taile ko
+
 
                 <button type='submit' className='p-2 text-lg font-semibold text-teal-600 hover:bg-teal-500 hover:text-white duration-200 w-1/5 border-4 border-teal-400 rounded-lg my-4' >Submit</button>
             </form>
@@ -151,3 +151,5 @@ taile ko
 };
 
 export default BookParcel;
+
+

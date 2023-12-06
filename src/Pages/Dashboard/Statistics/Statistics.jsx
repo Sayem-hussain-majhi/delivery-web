@@ -1,68 +1,52 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
+import ReactApexChart from 'react-apexcharts';
 import Heading from '../../../Components/Heading/Heading';
-import { BarChart, Bar, ResponsiveContainer } from 'recharts';
 
 const Statistics = () => {
 
-    const data = [
-        {
-          name: 'Page A',
-          uv: 4000,
-          pv: 2400,
-          amt: 2400,
-        },
-        {
-          name: 'Page B',
-          uv: 3000,
-          pv: 1398,
-          amt: 2210,
-        },
-        {
-          name: 'Page C',
-          uv: 2000,
-          pv: 9800,
-          amt: 2290,
-        },
-        {
-          name: 'Page D',
-          uv: 2780,
-          pv: 3908,
-          amt: 2000,
-        },
-        {
-          name: 'Page E',
-          uv: 1890,
-          pv: 4800,
-          amt: 2181,
-        },
-        {
-          name: 'Page F',
-          uv: 2390,
-          pv: 3800,
-          amt: 2500,
-        },
-        {
-          name: 'Page G',
-          uv: 3490,
-          pv: 4300,
-          amt: 2100,
-        },
-      ];
-      
+  var options = {
+    series: [{
+    data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380]
+  }],
+  plotOptions: {
+    bar: {
+      borderRadius: 4,
+      horizontal: true,
+    }
+  },
+  dataLabels: {
+    enabled: false
+  },
+  xaxis: {
+    categories: ['South Korea', 'Canada', 'United Kingdom', 'Netherlands', 'Italy', 'France', 'Japan',
+      'United States', 'China', 'Germany'
+    ],
+  }
+  };
 
 
 
-    return (
-        <div>
-            <Heading heading={'Statistics'}></Heading>
-
-            <ResponsiveContainer width="100%" height="100%">
-                <BarChart width={150} height={40} data={data}>
-                    <Bar dataKey="uv" fill="#8884d8" />
-                </BarChart>
-            </ResponsiveContainer>
-        </div>
-    );
+  return (
+    <div>
+      <Heading heading={'Statictics'}></Heading>
+      <ReactApexChart
+       options={options} 
+       series={options.series} 
+       type="line" 
+       height={350} 
+       ></ReactApexChart>
+    </div>
+  );
 };
 
 export default Statistics;
+
+
+ 
+
+
+
+
+
+
+
